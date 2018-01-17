@@ -42,7 +42,7 @@ script:
   - sudo pip install --ignore-installed cwltool
   - src/bin/travis/test.sh
 after_success:
-  - src/bin/travis/afterSuccess.sh
+  - travis_wait 30 min src/bin/travis/afterSuccess.sh
 deploy:
   provider: script
   script: src/bin/travis/publishRelease.sh
