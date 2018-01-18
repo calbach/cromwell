@@ -40,7 +40,7 @@ script:
   - sudo apt-get install procps
   - pip install 'requests[security]'
   - sudo pip install --ignore-installed cwltool
-  - travis_wait 180 src/bin/travis/test.sh
+  - src/bin/travis/test.sh
 after_success:
   - src/bin/travis/afterSuccess.sh
 deploy:
