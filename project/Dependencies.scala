@@ -298,7 +298,7 @@ object Dependencies {
 
   val centaurCwlRunnerDependencies = List(
     "com.github.scopt" %% "scopt" % scoptV
-  ) ++ slf4jBindingDependencies
+  ) ++ slf4jBindingDependencies ++ circeDependencies
 
   val coreDependencies = List(
     "com.typesafe.akka" %% "akka-actor" % akkaV,

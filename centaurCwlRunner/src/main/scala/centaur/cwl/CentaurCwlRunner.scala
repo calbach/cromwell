@@ -113,7 +113,12 @@ object CentaurCwlRunner extends StrictLogging {
     }
     val outdirOption = args.outdir.map(_.pathAsString)
     val testName = workflowPath.name
-    val workflowContents = parsedWorkflowPath.contentAsString
+    val workflowContents = if(!args.localMode) {
+      parsedWorkflowPath.contentAsString
+    } else {
+      val preProcessor = new PAPIPreprocessor("gs://centaur-cwl-conformance/cwl-inputs/")
+      preProcessor.preProcessInput(parsedWorkflowPath.contentAsString)
+    }
     val inputContents = args.workflowInputs.map(_.contentAsString)
     val workflowType = Option("cwl")
     val workflowTypeVersion = None
