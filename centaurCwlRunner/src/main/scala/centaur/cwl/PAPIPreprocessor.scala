@@ -18,7 +18,7 @@ class PAPIPreprocessor(prefix: String) {
           .map(l => obj.add("location", Json.fromString(l))).getOrElse(obj)
 
         val withNewPath = newPath
-          .map(p => withNewLocation.add("path", Json.fromString(p))).getOrElse(obj)
+          .map(p => withNewLocation.add("path", Json.fromString(p))).getOrElse(withNewLocation)
 
         Json.fromJsonObject(withNewPath)
           

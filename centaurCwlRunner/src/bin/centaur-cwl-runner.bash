@@ -3,7 +3,7 @@
 # `sbt assembly` must have already been run.
 BUILD_ROOT="$( dirname "${BASH_SOURCE[0]}" )/../../.."
 CENTAUR_CWL_JAR="${CENTAUR_CWL_JAR:-"$( find "${BUILD_ROOT}/centaurCwlRunner/target/scala-2.12" -name 'centaur-cwl-runner-*.jar' )"}"
-SERVICE_ACCOUNT_JSON="${BUILD_ROOT}/cromwell-service-account.json"
+SERVICE_ACCOUNT_JSON="/Users/tjeandet/shadow_confs/broad-dsde-cromwell-dev.json"
 
 if [ -e "${SERVICE_ACCOUNT_JSON}" ]
 then
